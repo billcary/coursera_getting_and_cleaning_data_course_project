@@ -69,6 +69,8 @@ name
 15. RENAME REMAINING COLUMNS WITH MORE DESCRIPTIVE NAMES
 16. Create new dataframe with calculates the average value for each feature, grouped by
 subject and activity -> **THIS IS THE TIDY DATA FRAME**
+17. Save the tidy data.frame as a .txt file.  **THIS IS THE TIDY DATA SET
+REQUIRED BY THE PROJECT INSTRUCTIONS**
 
 
 ### Citation
