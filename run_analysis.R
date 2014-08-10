@@ -11,33 +11,54 @@
 
 
 # 1. Import required libraries for data manipulation
+library(dplyr)
+
 
 # 2. Read list of data features from the file './UCI HAR Dataset/features.txt'
 # into a vector
+features <- read.table('./UCI HAR Dataset/features.txt', 
+                       col.names = c('num', 'feature_name'))
 
 # 3. Read the training data from './UCI HAR Dataset/train/X_train.txt' into a
 # data.frame
+training_data <- read.table('./UCI HAR Dataset/train/X_train.txt')
 
 # 4. Add a column providing the subject (person) number and consisting of the
 # data contained in './UCI HAR Dataset/train/subject_train.txt'
+training_subjects <- read.table('./UCI HAR Dataset/train/subject_train.txt',
+                                col.names = c('subject_num'))
+training_data <- cbind(training_subjects, training_data)
 
 # 5. Add a column providing the activity number and consisting of the data
 # contained in './UCI HAR Dataset/train/y_train.txt'
+training_activities <- read.table('./UCI HAR Dataset/train/y_train.txt',
+                                col.names = c('activity_num'))
+training_data <- cbind(training_activities, training_data)
 
 # 6. Read the testing data from './UCI HAR Dataset/test/X_test.txt' into a
 # data.frame
+test_data <- read.table('./UCI HAR Dataset/test/X_test.txt')
 
 # 7. Add a column providing the subject (person) number and consisting of the
 # data contained in './UCI HAR Dataset/test/subject_test.txt'
+test_subjects <- read.table('./UCI HAR Dataset/test/subject_test.txt',
+                                col.names = c('subject_num'))
+test_data <- cbind(test_subjects, test_data)
 
 # 8. Add a column providing the activity number and consisting of the data
 # contained in './UCI HAR Dataset/test/y_test.txt'
+test_activities <- read.table('./UCI HAR Dataset/test/y_test.txt',
+                                  col.names = c('activity_num'))
+test_data <- cbind(test_activities, test_data)
 
 # 9. Combine the training and testing dataframes into a single, consolidated
 # data.frame using rbind()
+all_data <- rbind(training_data, test_data)
 
 # 10. Read the list of activity numbers and matching descriptions into a
 # data.frame from the file './UCI HAR Dataset/activity_labels.txt'
+activity_labels <- read.table('./UCI HAR Dataset/activity_labels.txt',
+                              col.names = c('num', 'activity_label'))
 
 # 11. Add 'Subject' and 'Activity' to the list of values in the feature names
 # vector.
