@@ -69,6 +69,8 @@ activity_labels <- read.table('./UCI HAR Dataset/activity_labels.txt',
 # 13. Perform a merge operation to combine the consolidated data.frame with the
 # data.frame containing the activity labels and descriptions.  This will match
 # each feature vector with a meaningful activity description
+all_data <- merge(all_data, activity_labels, by.x = 'activity_num', 
+                  by.y = 'num')
 
 # 14. Remove any columns from the data.frame that do not contain '-mean()' or
 # '-std()' in the column name
