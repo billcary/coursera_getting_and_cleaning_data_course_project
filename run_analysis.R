@@ -72,17 +72,22 @@ activity_labels <- read.table('./UCI HAR Dataset/activity_labels.txt',
 #------------------------------------------------------------------------------
 # 11. Add 'Subject' and 'Activity' to the list of values in the feature names
 # vector.
+headers <- features[,2]  # extract 2nd column (feature names)
+headers <- as.character(headers)  # convert from factor to character vector
+headers <- c('activity_num', 'subject_num', headers, 'activity_description')
 
 #------------------------------------------------------------------------------
-# 12. Transpose the vector containing the list of feature names and then use it
-# to name the columns in the consolidated data.frame
-
-#------------------------------------------------------------------------------
-# 13. Perform a merge operation to combine the consolidated data.frame with the
+# 12. Perform a merge operation to combine the consolidated data.frame with the
 # data.frame containing the activity labels and descriptions.  This will match
 # each feature vector with a meaningful activity description
 all_data <- merge(all_data, activity_labels, by.x = 'activity_num', 
                   by.y = 'num')
+
+#------------------------------------------------------------------------------
+# 13. Rename the columns in the consolidated data.frame using the elements
+# contained in the headers vector.
+colnames(all_data) <- headers
+
 
 #------------------------------------------------------------------------------
 # 14. Remove any columns from the data.frame that do not contain '-mean()' or
@@ -91,6 +96,9 @@ all_data <- merge(all_data, activity_labels, by.x = 'activity_num',
 
 #------------------------------------------------------------------------------
 # 15. RENAME REMAINING COLUMNS WITH MORE DESCRIPTIVE NAMES
+# convert to names to lowercase
+# remove hyphens
+# remove parentheses
 
 
 #------------------------------------------------------------------------------
