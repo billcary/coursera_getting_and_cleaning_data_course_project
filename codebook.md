@@ -11,7 +11,7 @@ original source data.  The values are grouped by Activity and Subject.
 
 ### What makes the data tidy?
 The data set follows the three rules of Tidy Data as proposed by Hadley Wickham
-in the paper **Tidy Data** [https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB0QFjAA&url=http%3A%2F%2Fvita.had.co.nz%2Fpapers%2Ftidy-data.pdf&ei=AXLqU9y3C9froATh9IC4CQ&usg=AFQjCNFUAQr-w_87XpPhfEDoDYQw5-G5zg&sig2=HLzk9jqflCkHFk91_8b1XQ&bvm=bv.72676100,bs.1,d.cGE]  Specifically, it complies with the
+in the paper [Tidy Data](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB0QFjAA&url=http%3A%2F%2Fvita.had.co.nz%2Fpapers%2Ftidy-data.pdf&ei=AXLqU9y3C9froATh9IC4CQ&usg=AFQjCNFUAQr-w_87XpPhfEDoDYQw5-G5zg&sig2=HLzk9jqflCkHFk91_8b1XQ&bvm=bv.72676100,bs.1,d.cGE)  Specifically, it complies with the
 following rules:
 
 **1. Each variable forms a column.**
