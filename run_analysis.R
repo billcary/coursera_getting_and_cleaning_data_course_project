@@ -29,14 +29,14 @@ training_data <- read.table('./UCI HAR Dataset/train/X_train.txt')
 # 4. Add a column providing the subject (person) number and consisting of the
 # data contained in './UCI HAR Dataset/train/subject_train.txt'
 training_subjects <- read.table('./UCI HAR Dataset/train/subject_train.txt',
-                                col.names = c('subject_num'))
+                                col.names = c('subject.num'))
 training_data <- cbind(training_subjects, training_data)
 
 #------------------------------------------------------------------------------
 # 5. Add a column providing the activity number and consisting of the data
 # contained in './UCI HAR Dataset/train/y_train.txt'
 training_activities <- read.table('./UCI HAR Dataset/train/y_train.txt',
-                                col.names = c('activity_num'))
+                                col.names = c('activity.num'))
 training_data <- cbind(training_activities, training_data)
 
 #------------------------------------------------------------------------------
@@ -48,14 +48,14 @@ test_data <- read.table('./UCI HAR Dataset/test/X_test.txt')
 # 7. Add a column providing the subject (person) number and consisting of the
 # data contained in './UCI HAR Dataset/test/subject_test.txt'
 test_subjects <- read.table('./UCI HAR Dataset/test/subject_test.txt',
-                                col.names = c('subject_num'))
+                                col.names = c('subject.num'))
 test_data <- cbind(test_subjects, test_data)
 
 #------------------------------------------------------------------------------
 # 8. Add a column providing the activity number and consisting of the data
 # contained in './UCI HAR Dataset/test/y_test.txt'
 test_activities <- read.table('./UCI HAR Dataset/test/y_test.txt',
-                                  col.names = c('activity_num'))
+                                  col.names = c('activity.num'))
 test_data <- cbind(test_activities, test_data)
 
 #------------------------------------------------------------------------------
@@ -74,13 +74,13 @@ activity_labels <- read.table('./UCI HAR Dataset/activity_labels.txt',
 # vector.
 headers <- features[,2]  # extract 2nd column (feature names)
 headers <- as.character(headers)  # convert from factor to character vector
-headers <- c('activity_num', 'subject_num', headers, 'activity_description')
+headers <- c('activity.num', 'subject.num', headers, 'activity.description')
 
 #------------------------------------------------------------------------------
 # 12. Perform a merge operation to combine the consolidated data.frame with the
 # data.frame containing the activity labels and descriptions.  This will match
 # each feature vector with a meaningful activity description
-all_data <- merge(all_data, activity_labels, by.x = 'activity_num', 
+all_data <- merge(all_data, activity_labels, by.x = 'activity.num', 
                   by.y = 'num')
 
 #------------------------------------------------------------------------------
@@ -92,19 +92,23 @@ colnames(all_data) <- headers
 #------------------------------------------------------------------------------
 # 14. Remove any columns from the data.frame that do not contain '-mean()' or
 # '-std()' in the column name
-
+mean_cols <- grep('mean', names(all_data))
+std_cols <- grep('std', names(all_data))
+keep_cols <- c(564, 2, mean_cols, std_cols)
+keep_data <- all_data[,keep_cols]
 
 #------------------------------------------------------------------------------
-# 15. RENAME REMAINING COLUMNS WITH MORE DESCRIPTIVE NAMES
-# convert to names to lowercase
-# remove hyphens
-# remove parentheses
+# 15. Rename remaining columns using make.names() to ensure syntactically
+# valid names are used.
+names(keep_data) <- make.names(names(keep_data))
 
 
 #------------------------------------------------------------------------------
 # 16. Create new dataframe with calculates the average value for each feature,
 # grouped by subject and activity -> **THIS IS THE TIDY DATA FRAME**
-
+keep_data %>%
+        group_by(subject.num, activity.description) %>%
+        summarize_each(funs(mean))
 
 #------------------------------------------------------------------------------
 # 17. Save the tidy data.frame as a .txt file.  **THIS IS THE TIDY DATA SET
