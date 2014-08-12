@@ -113,4 +113,4 @@ tidy_data <- keep_data %>%
 #------------------------------------------------------------------------------
 # 17. Save the tidy data.frame as a .txt file.  **THIS IS THE TIDY DATA SET
 # REQUIRED BY THE PROJECT INSTRUCTIONS** 
-write.table(tidy_data, file = './tidy_data.txt', sep = ' ')
+write.table(tidy_data, file = './tidy_data.txt', sep = ' ', row.name = FALSE)

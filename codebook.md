@@ -23,10 +23,11 @@ following rules:
 **In addition, the following features have been implementated to improve the
 usability of the data set:**
 
-1. Each column has been given a discriptive name using the
-make.names() function during data set creation.
-2. The activities have been given descriptive names rather than numbers to
-improve radability.
+**1. Each column has been given a discriptive name using the
+make.names() function during data set creation.**
+
+**2. The activities have been given descriptive names rather than numbers to
+improve radability.**
 
 
 ### The dataset includes the following files:
