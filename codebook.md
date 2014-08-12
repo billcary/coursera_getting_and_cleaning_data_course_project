@@ -1,6 +1,29 @@
 ## Codebook file tidy_data.txt created for
 ## Coursera Getting and Cleaning Data Course
 
+### Description
+The data is based on the Human Activity Recognition Using Smartphones Dataset,
+developed by Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto
+and described in detail below under _Source Data Description_.
+
+The data set provides the mean value of all mean() and std() features from the
+original source data.  The values are grouped by Activity and Subject.
+
+### What makes the data tidy?
+The data set follows the three rules of Tidy Data as proposed by Hadley Wickham
+in the paper **Tidy Data** [https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB0QFjAA&url=http%3A%2F%2Fvita.had.co.nz%2Fpapers%2Ftidy-data.pdf&ei=AXLqU9y3C9froATh9IC4CQ&usg=AFQjCNFUAQr-w_87XpPhfEDoDYQw5-G5zg&sig2=HLzk9jqflCkHFk91_8b1XQ&bvm=bv.72676100,bs.1,d.cGE]  Specifically, it complies with the
+following rules:
+
+**1. Each variable forms a column.**
+**2. Each observation forms a row.**
+**3. Each type of observational unit forms a table.**
+
+**In addition, each column has been given a discriptive name using the
+make.names() function during data set creation.**
+
+
+#### Source Data Description
+```
 ==================================================================
 Cleansing of Human Activity Recognition Using Smartphones Dataset
 Version 1.0
@@ -27,22 +50,18 @@ For each record it is provided:
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
-The dataset includes the following files:
-=========================================
+```
 
-- 'tidy_data.txt'
+### The dataset includes the following files:
+* 'tidy_data.txt'
  
 
-## Notes: 
-## ======
-- Features are normalized and bounded within [-1,1].
-- Each feature vector is a row on the text file.
+### Notes 
+* Features are normalized and bounded within [-1,1].
+* Each feature vector is a row on the text file.
 
-For more information about this dataset contact: activityrecognition@smartlab.ws
 
-## Feature Selection 
-## =================
-
+### Feature Selection 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
 Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
@@ -137,33 +156,9 @@ These signals were used to estimate variables of the feature vector for each pat
 
 The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-std(): Standard deviation
-mad(): Median absolute deviation 
-max(): Largest value in array
-min(): Smallest value in array
-sma(): Signal magnitude area
-energy(): Energy measure. Sum of the squares divided by the number of values. 
-iqr(): Interquartile range 
-entropy(): Signal entropy
-arCoeff(): Autorregresion coefficients with Burg order equal to 4
-correlation(): correlation coefficient between two signals
-maxInds(): index of the frequency component with largest magnitude
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-skewness(): skewness of the frequency domain signal 
-kurtosis(): kurtosis of the frequency domain signal 
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-angle(): Angle between to vectors.
+mean: Mean value
+std: Standard deviation
 
-Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
-
-The complete list of variables of each feature vector is available in 'features.txt'
 
 ### Citation
 Data utilized in the project was obtained from the following source:
