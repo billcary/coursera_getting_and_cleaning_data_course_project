@@ -15,7 +15,9 @@ in the paper **Tidy Data** [https://www.google.com/url?sa=t&rct=j&q=&esrc=s&sour
 following rules:
 
 **1. Each variable forms a column.**
+
 **2. Each observation forms a row.**
+
 **3. Each type of observational unit forms a table.**
 
 **In addition, each column has been given a discriptive name using the
@@ -156,8 +158,8 @@ These signals were used to estimate variables of the feature vector for each pat
 
 The set of variables that were estimated from these signals are: 
 
-mean: Mean value
-std: Standard deviation
+* mean: Mean value
+* std: Standard deviation
 
 
 ### Citation
