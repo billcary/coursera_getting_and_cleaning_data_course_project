@@ -106,11 +106,11 @@ names(keep_data) <- make.names(names(keep_data))
 #------------------------------------------------------------------------------
 # 16. Create new dataframe with calculates the average value for each feature,
 # grouped by subject and activity -> **THIS IS THE TIDY DATA FRAME**
-keep_data %>%
+tidy_data <- keep_data %>%
         group_by(subject.num, activity.description) %>%
-        summarize_each(funs(mean))
+        summarise_each(funs(mean))
 
 #------------------------------------------------------------------------------
 # 17. Save the tidy data.frame as a .txt file.  **THIS IS THE TIDY DATA SET
 # REQUIRED BY THE PROJECT INSTRUCTIONS** 
-
+write.table(tidy_data, file = './tidy_data.txt', sep = ' ')
