@@ -20,8 +20,13 @@ following rules:
 
 **3. Each type of observational unit forms a table.**
 
-**In addition, each column has been given a discriptive name using the
-make.names() function during data set creation.**
+**In addition, the following features have been implementated to improve the
+usability of the data set:**
+
+1. Each column has been given a discriptive name using the
+make.names() function during data set creation.
+2. The activities have been given descriptive names rather than numbers to
+improve radability.
 
 
 ### The dataset includes the following files:
