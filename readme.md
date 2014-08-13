@@ -32,7 +32,11 @@ Good luck!
 3. run_analysis.R runs against Samsung data contained in working directory
 4. run_analysis.R generates a tidy data set ('tidy_data.txt') as output
 5. readme.md is contained in main directory of repo
-6. codebook.md is contained in main directory of repo
+6. readme.md provides full explanation of analysis processing flow and files
+7. codebook.md is contained in main directory of repo
+8. codebook.md provides detail on all variables and data types contained in
+the output data, as well as an explanation of all transformations applied
+as part of the analysis
 
 
 ### Directory Structure
