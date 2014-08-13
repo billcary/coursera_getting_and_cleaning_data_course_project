@@ -26,6 +26,14 @@ Appropriately labels the data set with descriptive variable names.
 Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 Good luck!
 
+### Grading Rubric
+1. Link submitted to Github repo containing code for analysis
+2. Repo contains run_analysis.R in the main directory
+3. run_analysis.R runs against Samsung data contained in working directory
+4. run_analysis.R generates a tidy data set ('tidy_data.txt') as output
+5. readme.md is contained in main directory of repo
+6. codebook.md is contained in main directory of repo
+
 
 ### Directory Structure
 Files are contained in the following directory structure:
