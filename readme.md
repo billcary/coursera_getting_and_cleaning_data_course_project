@@ -71,14 +71,15 @@ Files are contained in the following directory structure:
 10. Read the list of activity numbers and matching descriptions into a data.frame from the file
 './UCI HAR Dataset/activity_labels.txt'
 11. Add 'Subject' and 'Activity' to the list of values in the feature names vector.
-12. Transpose the vector containing the list of feature names and then use it to name the
-columns in the consolidated data.frame
-13. Perform a merge operation to combine the consolidated data.frame with the data.frame containing
-the activity labels and descriptions.  This will match each feature vector with a meaningful activity
-description
+12. Perform a merge operation to combine the consolidated data.frame with the
+data.frame containing the activity labels and descriptions.  This will match
+each feature vector with a meaningful activity description
+13. Rename the columns in the consolidated data.frame using the elements
+contained in the headers vector.
 14. Remove any columns from the data.frame that do not contain '-mean()' or '-std()' in the column
 name
-15. RENAME REMAINING COLUMNS WITH MORE DESCRIPTIVE NAMES
+15. Rename remaining columns using make.names() to ensure syntactically
+valid names are used.
 16. Create new dataframe with calculates the average value for each feature, grouped by
 subject and activity -> **THIS IS THE TIDY DATA FRAME**
 17. Save the tidy data.frame as a .txt file.  **THIS IS THE TIDY DATA SET
