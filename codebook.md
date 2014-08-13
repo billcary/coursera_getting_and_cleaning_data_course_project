@@ -1,5 +1,5 @@
 ## Codebook for tidy_data.txt
-#### Created for Coursera Getting and Cleaning Data Course
+#### Created for Coursera Getting and Cleaning Data Course 
 
 ### Description
 The data is based on the Human Activity Recognition Using Smartphones Dataset,
