@@ -11,7 +11,7 @@
 #
 #------------------------------------------------------------------------------
 
-# 1. Import required libraries for data manipulation
+# 1. Import required libraries for data manipulation 
 library(dplyr)
 
 #------------------------------------------------------------------------------
