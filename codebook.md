@@ -26,8 +26,11 @@ usability of the data set:
 **1. Each column has been given a discriptive name using the
 make.names() function during data set creation.**
 
-**2. The activities have been given descriptive names rather than numbers to
-improve radability.**
+**2. Additional formatting has been applied to columns per Google R Style Guide
+located at https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml.**
+
+**3. The activities have been given descriptive names rather than numbers to
+improve readability.**
 
 
 ### The dataset includes the following files:

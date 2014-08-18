@@ -100,8 +100,9 @@ keep_data <- all_data[,keep_cols]
 #------------------------------------------------------------------------------
 # 15. Rename remaining columns using make.names() to ensure syntactically
 # valid names are used.
-names(keep_data) <- make.names(names(keep_data))
-
+names(keep_data) <- make.names(names(keep_data)) # initial cleanup
+names(keep_data) <- tolower(names(keep_data)) # make lower case
+names(keep_data) <- gsub('\\.\\.', '', names(keep_data)) # remove repeated '.' characters
 
 #------------------------------------------------------------------------------
 # 16. Create new dataframe with calculates the average value for each feature,

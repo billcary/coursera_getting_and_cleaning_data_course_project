@@ -79,7 +79,8 @@ contained in the headers vector.
 14. Remove any columns from the data.frame that do not contain '-mean()' or '-std()' in the column
 name
 15. Rename remaining columns using make.names() to ensure syntactically
-valid names are used.
+valid names are used.  Additional formatting per Google R Style Guide located
+at https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml
 16. Create new dataframe with calculates the average value for each feature, grouped by
 subject and activity -> **THIS IS THE TIDY DATA FRAME**
 17. Save the tidy data.frame as a .txt file.  **THIS IS THE TIDY DATA SET
