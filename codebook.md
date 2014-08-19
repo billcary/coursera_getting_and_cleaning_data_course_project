@@ -134,6 +134,7 @@ These signals were used to estimate variables of the feature vector for each pat
  * fbodybodygyromag.std         : num  -0.824 -0.932 -0.978 -0.321 -0.398 ...
  * fbodybodygyrojerkmag.std     : num  -0.933 -0.987 -0.995 -0.382 -0.392 ...
 
+
 The factor feature 'activity.description' has the following six (6) levels:
 LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS 
 
